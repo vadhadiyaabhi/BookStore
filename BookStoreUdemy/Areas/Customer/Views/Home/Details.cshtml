@@ -1,0 +1,66 @@
+﻿@model ShoppingCart
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<partial name="_Notification" />
+
+
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="fw-bold text-dark">@Model.Product.Title</h4>
+            <h6 class="text-success">By @Model.Product.Author</h6>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="ProductId" />
+                <div class="row">
+                <div class="col-md-8 col-12">
+                <h5 class="card-title"></h5>
+                <p class="card-text">
+                    ISBN: @Model.Product.ISBN <br />
+                    <strike>List Price: @((Model.Product.Price + 10).ToString("c"))</strike>
+                </p>
+                <div class="row mt-2 border-bottom">
+                    <div class="col-4 text-center col-md-2">Quantity</div>
+                    <div class="col-4 text-center col-md-2">1-50</div>
+                    <div class="col-4 text-center col-md-2">51-100</div>
+                    <div class="col-4 text-center col-md-2">100+</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 text-danger text-center  col-md-2">Price</div>
+                    <div class="col-4 text-danger text-center col-md-2">@Model.Product.Price.ToString("c")</div>
+                    <div class="col-4 text-danger text-center col-md-2">@Model.Product.Price50.ToString("c")</div>
+                    <div class="col-4 text-danger text-center col-md-2">@Model.Product.Price100.ToString("c")</div>
+                </div>
+                <div class="">
+                    <p>
+                        <div class="fw-bold">Description: </div> 
+                        @Html.Raw(@Model.Product.Description)
+                    </p>
+                </div>
+                    <label class="form-label" asp-for="Count"></label>
+                    <input class="form-control d-inline w-auto" asp-for="Count" />
+                <div class="row my-2">
+                    <div class="col-6">
+                        <a asp-action="Index" style="width:100%" class="btn btn-secondary btn-block">
+                            Back To List
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" style="width:100%" class="btn btn-success btn-block">
+                            Add To Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <img src="@("/" + Model.Product.ImageUrl.Replace('\\','/'))" width="100%" class="rounded-2" />
+            </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

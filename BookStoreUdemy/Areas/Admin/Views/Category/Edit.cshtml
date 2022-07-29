@@ -1,0 +1,36 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="p-3">
+        <form method="post" asp-action="Edit" asp-controller="Category">
+            <input type="hidden" asp-for="@Model.Id" />
+            <div class="mt-3 ps-0 p-3">
+                <h2 class="text-primary">Edit Category</h2>
+            </div>
+            <div>
+                <label class="form-label" asp-for="@Model.Name"></label>
+                <input class="form-control" asp-for="@Model.Name" />
+                <span class="text-danger" asp-validation-for="@Model.Name"></span>
+            </div>
+            <div>
+                <label class="form-label" asp-for="@Model.DisplayOrder"></label>
+                <input class="form-control" asp-for="@Model.DisplayOrder" />
+                <span class="text-danger" asp-validation-for="@Model.DisplayOrder"></span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary mt-3 me-2">Edit</button>
+                <a asp-action="Index" asp-controller="Category" ><button type="button" class="btn btn-secondary mt-3">Go Back</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+}
+}

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<partial name="_Notification" />
+
+
+<div class="container">
+    <h3 class="ps-1">List Of Products</h3>
+    <div class="row pt-3 px-2">
+        @foreach(var product in Model)
+        {
+            <div class="col-lg-3 col-md-6 border-1 rounded-2 m-3">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="@product.ImageUrl" alt="Card image cap" width="150" height="200">
+                  <div class="card-body pl-1">
+                    <h5 class="card-title mb-0">@product.Title</h5>
+                    <p class="card-text fs-6 text-secondary">By @product.Author</p>
+                        <p class="card-text text-secondary">List Price: <strike>@((product.Price - 5).ToString("0.00"))</strike><br>
+                            As low as: @product.Price.ToString("0.00")
+                        </p>
+                    <a class="btn btn-sm btn-primary" asp-action="Details" asp-route-id="@product.Id">Details</a>
+                  </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

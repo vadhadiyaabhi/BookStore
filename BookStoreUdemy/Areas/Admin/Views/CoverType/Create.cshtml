@@ -1,0 +1,31 @@
+﻿@model CoverType
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="p-3">
+        <form method="post">
+            <div class="mt-3 p-3 ps-0">
+                <h2 class="text-primary">Create CoverType</h2>
+            </div>
+            <div asp-validation-summary="All"></div>
+            <div>
+                <label class="form-label" asp-for="Name"></label>
+                <input class="form-control" asp-for="Name" />
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary mt-3 me-2">Create</button>
+                <a asp-action="Index" ><button type="button" class="btn btn-secondary mt-3">Go Back</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+        <partial name="_ValidationScriptsPartial" />
+}
+
+
+

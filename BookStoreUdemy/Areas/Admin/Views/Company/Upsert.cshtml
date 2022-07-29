@@ -1,0 +1,82 @@
+﻿@model Company
+@{
+    ViewData["Title"] = "AddOrEdit Company";
+}
+
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-10">
+            <div class="p-3">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+@*                Don't forget to add attribute - enctype = "multipart/form-data" whenever you're uploading any image to the server'
+*@               
+                <form method="post" asp-action="Upsert" enctype="multipart/form-data">                      
+                    <input type="hidden" asp-for="Id" />
+                    <div class="mt-1 ps-0 p-3">
+                        <h2 class="text-primary">Add Product</h2>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <label class="form-label" asp-for="CompanyName"></label>
+                            <input class="form-control" asp-for="CompanyName" />
+                            <span class="text-danger" asp-validation-for="CompanyName"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <label class="form-label" asp-for="StreetAddress"></label>
+                            <input class="form-control" asp-for="StreetAddress" />
+                            <span class="text-danger" asp-validation-for="StreetAddress"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-12 col-sm-6">
+                             <label class="form-label" asp-for="MobileNo"></label>
+                            <input class="form-control" asp-for="MobileNo" />
+                            <span class="text-danger" asp-validation-for="MobileNo"></span>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label class="form-label" asp-for="City"></label>
+                            <input class="form-control" asp-for="City" />
+                            <span class="text-danger" asp-validation-for="City"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-12 col-sm-6">
+                            <label class="form-label" asp-for="PostalCode"></label>
+                            <input class="form-control" asp-for="PostalCode" />
+                            <span class="text-danger" asp-validation-for="PostalCode"></span>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label class="form-label" asp-for="State"></label>
+                            <input class="form-control" asp-for="State" />
+                            <span class="text-danger" asp-validation-for="State"></span>
+                        </div>
+                    </div>
+                    <div>
+                        @if (Model.Id != 0)
+                        {
+                            <button type="submit" class="btn btn-primary mt-3 me-2">Edit Company</button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-primary mt-3 me-2">Add Company</button>
+                        }
+
+                        <a asp-action="Index"><button type="button" class="btn btn-secondary mt-3">Go Back</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+
+}

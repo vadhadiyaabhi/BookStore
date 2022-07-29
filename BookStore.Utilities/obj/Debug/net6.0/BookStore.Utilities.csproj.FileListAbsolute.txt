@@ -1,0 +1,12 @@
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\bin\Debug\net6.0\BookStore.Utilities.deps.json
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\bin\Debug\net6.0\BookStore.Utilities.dll
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\bin\Debug\net6.0\BookStore.Utilities.pdb
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\obj\Debug\net6.0\BookStore.Utilities.csproj.AssemblyReference.cache
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\obj\Debug\net6.0\BookStore.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\obj\Debug\net6.0\BookStore.Utilities.AssemblyInfoInputs.cache
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\obj\Debug\net6.0\BookStore.Utilities.AssemblyInfo.cs
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\obj\Debug\net6.0\BookStore.Utilities.csproj.CoreCompileInputs.cache
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\obj\Debug\net6.0\BookStore.Utilities.dll
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\obj\Debug\net6.0\refint\BookStore.Utilities.dll
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\obj\Debug\net6.0\BookStore.Utilities.pdb
+D:\.net Core\BookStoreUdemy\BookStore.Utilities\obj\Debug\net6.0\ref\BookStore.Utilities.dll
